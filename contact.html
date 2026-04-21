@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Vertex Network Solutions</title>
+    <meta
+      name="description"
+      content="Contact Vertex Network Solutions for enterprise cybersecurity and networking consultations, assessments, and support."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-gray-950 text-gray-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <div id="navbar"></div>
+
+      <main class="flex-1 pt-16">
+        <!-- Hero -->
+        <section class="relative overflow-hidden border-b border-gray-800/50">
+          <div class="absolute inset-0 grid-bg"></div>
+          <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div class="max-w-3xl animate-fade-in">
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 text-sm font-medium text-cyan-400"
+              >
+                Contact Us
+              </span>
+              <h1 class="mt-6 text-4xl font-bold text-white sm:text-5xl">
+                Let's Secure Your <span class="gradient-text">Infrastructure</span>
+              </h1>
+              <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+                Reach out for a consultation, security assessment, or to learn more about our
+                enterprise solutions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="py-24 sm:py-32">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-16 lg:grid-cols-5">
+              <!-- Info -->
+              <div class="lg:col-span-2 space-y-8">
+                <div>
+                  <h2 class="text-2xl font-bold text-white">Get in Touch</h2>
+                  <p class="mt-3 text-gray-400 leading-relaxed">
+                    Our team typically responds within 2 business hours. For urgent security
+                    incidents, call our 24/7 hotline.
+                  </p>
+                </div>
+
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20"
+                    >
+                      <span class="text-cyan-400" data-icon="mail" data-size="18"></span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-white">Email</p>
+                      <p class="text-sm text-gray-400">contact@vertexns.com</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20"
+                    >
+                      <span class="text-cyan-400" data-icon="phone" data-size="18"></span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-white">Phone</p>
+                      <p class="text-sm text-gray-400">+1 (555) 234-5678</p>
+                      <p class="text-xs text-gray-500">24/7 Security Hotline</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20"
+                    >
+                      <span class="text-cyan-400" data-icon="map-pin" data-size="18"></span>
+                    </div>
+                    <div>
+                      <p class="font-medium text-white">Office</p>
+                      <p class="text-sm text-gray-400">
+                        456 Cyber Lane, Suite 200<br />
+                        San Francisco, CA 94102
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="rounded-xl border border-gray-700/50 bg-gray-800/30 p-6">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="text-cyan-400" data-icon="shield" data-size="20"></span>
+                    <span class="text-sm font-semibold text-white">Your data is secure</span>
+                  </div>
+                  <ul class="space-y-2">
+                    <li class="flex items-center gap-2 text-sm text-gray-400">
+                      <span class="text-emerald-400 shrink-0" data-icon="check-circle" data-size="14"></span>
+                      All submissions encrypted in transit
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-gray-400">
+                      <span class="text-emerald-400 shrink-0" data-icon="check-circle" data-size="14"></span>
+                      We never share your information
+                    </li>
+                    <li class="flex items-center gap-2 text-sm text-gray-400">
+                      <span class="text-emerald-400 shrink-0" data-icon="check-circle" data-size="14"></span>
+                      SOC 2 Type II compliant
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Form -->
+              <div class="lg:col-span-3">
+                <div class="rounded-2xl border border-gray-700/50 bg-gray-800/30 p-8 sm:p-10">
+                  <!-- Success panel -->
+                  <div id="contact-success" class="text-center py-12" hidden>
+                    <div
+                      class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20"
+                    >
+                      <span class="text-emerald-400" data-icon="check-circle" data-size="32"></span>
+                    </div>
+                    <h3 class="mt-6 text-xl font-semibold text-white">Message Sent!</h3>
+                    <p id="contact-success-message" class="mt-2 text-gray-400"></p>
+                    <button
+                      type="button"
+                      id="contact-reset"
+                      class="mt-8 inline-flex items-center justify-center rounded-lg border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 font-semibold px-6 py-3 text-base transition-all"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
+
+                  <!-- Form -->
+                  <form id="contact-form" class="space-y-6" novalidate>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div class="space-y-1.5">
+                        <label for="name" class="block text-sm font-medium text-gray-300">Full Name *</label>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          maxlength="100"
+                          placeholder="John Doe"
+                          class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                        />
+                        <p class="text-sm text-red-400" data-error-for="name" hidden></p>
+                      </div>
+                      <div class="space-y-1.5">
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email Address *</label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          maxlength="254"
+                          placeholder="john@company.com"
+                          class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                        />
+                        <p class="text-sm text-red-400" data-error-for="email" hidden></p>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                      <div class="space-y-1.5">
+                        <label for="company" class="block text-sm font-medium text-gray-300">Company</label>
+                        <input
+                          id="company"
+                          name="company"
+                          type="text"
+                          maxlength="100"
+                          placeholder="Acme Corp"
+                          class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                        />
+                        <p class="text-sm text-red-400" data-error-for="company" hidden></p>
+                      </div>
+                      <div class="space-y-1.5">
+                        <label for="phone" class="block text-sm font-medium text-gray-300">Phone</label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          maxlength="20"
+                          placeholder="+1 (555) 000-0000"
+                          class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                        />
+                        <p class="text-sm text-red-400" data-error-for="phone" hidden></p>
+                      </div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                      <label for="subject" class="block text-sm font-medium text-gray-300">Subject *</label>
+                      <input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        maxlength="200"
+                        placeholder="Security assessment for our network"
+                        class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                      />
+                      <p class="text-sm text-red-400" data-error-for="subject" hidden></p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                      <label for="message" class="block text-sm font-medium text-gray-300">Message *</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        maxlength="5000"
+                        placeholder="Tell us about your security needs, current infrastructure, and goals..."
+                        class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 resize-none transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                      ></textarea>
+                      <p class="text-sm text-red-400" data-error-for="message" hidden></p>
+                    </div>
+
+                    <div
+                      id="contact-server-error"
+                      class="rounded-lg border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-400"
+                      hidden
+                    ></div>
+
+                    <button
+                      type="submit"
+                      id="contact-submit"
+                      data-loading-text="Sending..."
+                      class="inline-flex items-center justify-center rounded-lg transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/30 px-8 py-4 text-lg w-full sm:w-auto"
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages/contact.js"></script>
+  </body>
+</html>

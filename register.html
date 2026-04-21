@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account | Vertex Network Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-gray-950 text-gray-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <div id="navbar"></div>
+
+      <main class="flex-1 pt-16">
+        <section class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center">
+          <div class="absolute inset-0 grid-bg"></div>
+          <div class="relative w-full max-w-md mx-auto px-4 py-16">
+            <div class="text-center mb-8">
+              <a href="index.html" class="inline-flex items-center gap-2">
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/20"
+                >
+                  <span class="text-cyan-400" data-icon="shield" data-size="22"></span>
+                </div>
+                <span class="text-xl font-bold text-white"
+                  >Vertex<span class="text-cyan-400">NS</span></span
+                >
+              </a>
+              <h1 class="mt-6 text-2xl font-bold text-white">Create your account</h1>
+              <p class="mt-2 text-sm text-gray-400">
+                Start monitoring and securing your network today
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-700/50 bg-gray-800/30 p-8">
+              <form id="register-form" class="space-y-5" novalidate>
+                <div class="space-y-1.5">
+                  <label for="name" class="block text-sm font-medium text-gray-300">Full Name *</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    maxlength="100"
+                    placeholder="John Doe"
+                    class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                  />
+                  <p class="text-sm text-red-400" data-error-for="name" hidden></p>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="email" class="block text-sm font-medium text-gray-300">Email *</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@company.com"
+                    class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                  />
+                  <p class="text-sm text-red-400" data-error-for="email" hidden></p>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="company" class="block text-sm font-medium text-gray-300">Company</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    maxlength="100"
+                    placeholder="Acme Corp"
+                    class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                  />
+                  <p class="text-sm text-red-400" data-error-for="company" hidden></p>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="password" class="block text-sm font-medium text-gray-300">Password *</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="Min 8 chars, uppercase, lowercase, number"
+                    class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                  />
+                  <p class="text-sm text-red-400" data-error-for="password" hidden></p>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="confirmPassword" class="block text-sm font-medium text-gray-300"
+                    >Confirm Password *</label
+                  >
+                  <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="Repeat your password"
+                    class="w-full rounded-lg border bg-gray-800/50 px-4 py-3 text-gray-100 placeholder-gray-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-900 border-gray-600 focus:border-cyan-500 focus:ring-cyan-500"
+                  />
+                  <p class="text-sm text-red-400" data-error-for="confirmPassword" hidden></p>
+                </div>
+
+                <div
+                  id="register-server-error"
+                  class="rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-400"
+                  hidden
+                ></div>
+
+                <button
+                  type="submit"
+                  id="register-submit"
+                  data-loading-text="Creating account..."
+                  class="inline-flex items-center justify-center rounded-lg transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-400/30 px-8 py-4 text-lg w-full"
+                >
+                  Create Account
+                </button>
+              </form>
+
+              <div class="mt-6 text-center">
+                <p class="text-sm text-gray-400">
+                  Already have an account?
+                  <a href="login.html" class="text-cyan-400 font-medium hover:text-cyan-300">
+                    Sign in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages/register.js"></script>
+  </body>
+</html>

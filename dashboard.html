@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Vertex Network Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-gray-950 text-gray-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <div id="navbar"></div>
+
+      <main class="flex-1 pt-16">
+        <!-- Loading state -->
+        <div id="dashboard-loading" class="flex min-h-[calc(100vh-4rem)] items-center justify-center">
+          <div class="text-center">
+            <div
+              class="mx-auto h-12 w-12 animate-spin-custom rounded-full border-4 border-gray-700 border-t-cyan-400"
+            ></div>
+            <p class="mt-4 text-gray-400">Loading dashboard...</p>
+          </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard-content" class="min-h-[calc(100vh-4rem)] bg-gray-950" hidden>
+          <!-- Header -->
+          <div class="border-b border-gray-800/50 bg-gray-900/30">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h1 class="text-2xl font-bold text-white">Network Dashboard</h1>
+                  <p id="dashboard-welcome" class="text-sm text-gray-400"></p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                  >
+                    <span class="mr-1.5 h-2 w-2 rounded-full bg-emerald-400 inline-block"></span>
+                    System Operational
+                  </span>
+                  <button
+                    type="button"
+                    data-logout
+                    class="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all"
+                  >
+                    <span data-icon="log-out" data-size="16"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+            <!-- Stats Grid -->
+            <div id="stats-grid" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6"></div>
+
+            <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+              <!-- Devices table -->
+              <div class="lg:col-span-2">
+                <div
+                  class="relative rounded-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm"
+                >
+                  <div class="border-b border-gray-700/50 p-6">
+                    <div class="flex items-center justify-between">
+                      <h2 class="text-lg font-semibold text-white">Network Devices</h2>
+                      <span id="devices-count-badge"></span>
+                    </div>
+                  </div>
+                  <div class="p-0">
+                    <div class="overflow-x-auto">
+                      <table class="w-full">
+                        <thead>
+                          <tr class="border-b border-gray-700/50">
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-400">Device</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-400">IP Address</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-400">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-400">Uptime</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-400">Traffic</th>
+                          </tr>
+                        </thead>
+                        <tbody id="devices-tbody" class="divide-y divide-gray-800/50"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sidebar -->
+              <div class="space-y-8">
+                <!-- Alerts -->
+                <div class="relative rounded-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
+                  <div class="border-b border-gray-700/50 p-6">
+                    <div class="flex items-center justify-between">
+                      <h2 class="text-lg font-semibold text-white">Alerts</h2>
+                      <span id="alerts-count-badge"></span>
+                    </div>
+                  </div>
+                  <div id="alerts-list" class="p-6 space-y-4"></div>
+                </div>
+
+                <!-- Account -->
+                <div class="relative rounded-2xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
+                  <div class="border-b border-gray-700/50 p-6">
+                    <h2 class="text-lg font-semibold text-white">Account</h2>
+                  </div>
+                  <div class="p-6 space-y-4">
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/10 border border-cyan-500/20"
+                      >
+                        <span class="text-cyan-400" data-icon="user" data-size="24"></span>
+                      </div>
+                      <div>
+                        <p id="account-name" class="font-medium text-white"></p>
+                        <p id="account-email" class="text-sm text-gray-400"></p>
+                      </div>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-gray-800/50">
+                      <div class="flex justify-between text-sm">
+                        <span class="text-gray-400">Company</span>
+                        <span id="account-company" class="text-gray-200"></span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-gray-400">Role</span>
+                        <span id="account-role"></span>
+                      </div>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-gray-400">Plan</span>
+                        <span
+                          class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                          >Enterprise</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+  </body>
+</html>

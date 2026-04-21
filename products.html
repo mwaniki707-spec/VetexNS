@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | Vertex Network Solutions</title>
+    <meta
+      name="description"
+      content="Enterprise networking and security products from Vertex Network Solutions — routers, dashboards, and office connectivity kits."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-gray-950 text-gray-100 antialiased">
+    <div class="flex min-h-screen flex-col">
+      <div id="navbar"></div>
+
+      <main class="flex-1 pt-16">
+        <!-- Hero -->
+        <section class="relative overflow-hidden border-b border-gray-800/50">
+          <div class="absolute inset-0 grid-bg"></div>
+          <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-3xl"
+          ></div>
+          <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+            <div class="max-w-3xl animate-fade-in">
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-1.5 text-sm font-medium text-cyan-400"
+              >
+                Products
+              </span>
+              <h1 class="mt-6 text-4xl font-bold text-white sm:text-5xl">
+                Hardware & Software
+                <span class="gradient-text">Built for Security</span>
+              </h1>
+              <p class="mt-6 text-lg text-gray-400 leading-relaxed">
+                Purpose-built networking and security products designed to integrate seamlessly
+                with your existing infrastructure.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="py-24 sm:py-32">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div id="products-list" class="space-y-16"></div>
+          </div>
+        </section>
+
+        <!-- Comparison / CTA -->
+        <section class="border-t border-gray-800/50 bg-gray-900/20 py-24">
+          <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">Not Sure Which Product Fits?</h2>
+            <p class="mt-4 text-lg text-gray-400">
+              Our solutions architects will help you choose the right combination of hardware and
+              software for your specific needs.
+            </p>
+            <a
+              href="contact.html"
+              class="mt-8 inline-flex items-center gap-2 rounded-lg bg-cyan-500 px-8 py-4 text-base font-semibold text-gray-950 shadow-lg shadow-cyan-500/25 transition-all hover:bg-cyan-400"
+            >
+              Talk to an Expert
+              <span data-icon="arrow-right" data-size="18"></span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <div id="footer"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pages/products.js"></script>
+  </body>
+</html>
